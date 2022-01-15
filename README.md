@@ -86,7 +86,9 @@ At the core of Uniswap is one math function:
 Assume we have a trading pair for `ETH <> LW3 Token`
 
 **x** = reserve balance of `ETH` in the trading pool
+
 **y** = reserve balance of `LW3 Token` in the trading pool
+
 **k** = a constant
 
 This formula is responsible for calculating prices, deciding how much `LW3 Token` would be received in exchange for a certain amount of `ETH`, or vice versa.
