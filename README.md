@@ -243,8 +243,8 @@ Alternatively, if we choose to distribute only a portion of the tokens initially
 
 The only good solution seems to have no supply limit at all, and mint new tokens whenever new liquidity is added. This allows for infinite growth, and if we do the math carefully, we can make sure issued shares remain correct whenever liquidity is added or removed. 
 
-**So, how do we calculate the amount of LP-tokens to be minted when liquidity is added?
-**
+**So, how do we calculate the amount of LP-tokens to be minted when liquidity is added?**
+
 Uniswap V1 calculates the amount proportionate to the ETH reserve. The following equation shows how the amount of new LP-tokens is calculated depending on how much ETH is deposited:
 
 `amountMinted = totalAmount * (ethDeposited / ethReserve)`
