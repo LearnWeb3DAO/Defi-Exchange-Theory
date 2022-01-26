@@ -176,7 +176,7 @@ When the first person adds liquidity, it creates a reserve balance and sets the 
 A simple implementation of the `addLiquidity` function in Solidity would look something like this:
 
 ```solidity
-functio addLiquidity(uint256 tokenAmount) public payable {
+function addLiquidity(uint256 tokenAmount) public payable {
     IERC20 token = IERC20(tokenAddress);
     token.transferFrom(msg.sender, address(this), tokenAmount);
 }
