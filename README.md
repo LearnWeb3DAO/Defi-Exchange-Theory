@@ -43,7 +43,7 @@ You might be wondering - "why can't we just recreate a centralized exchange on-c
 
 Well, you can, but it's not good enough.
 
-Centralized exchanges typically work on an order-book system. Alice puts up a listing saying she is willing to sell 100 of 'TokenA' for 50 of 'TokenB', and the listing is added to the order book. At some point, if Bob comes along and says he wants to buy 100 of 'TokenA' or 50 of 'TokenB' - their orders are matched together, and the trade is executed.
+Centralized exchanges typically work on an order-book system. Alice puts up a listing saying she is willing to sell 100 of 'TokenA' for 50 of 'TokenB', and the listing is added to the order book. At some point, if Bob comes along and says he wants to buy 100 of 'TokenA' for 50 of 'TokenB' - their orders are matched together, and the trade is executed.
 
 Order-book based exchanges were attempted on Ethereum, with the most significant example being [0xProject](https://0x.org/) but due to the high gas required for all the storage and matching algorithms, it was challenging to attract users.
 
@@ -176,7 +176,7 @@ When the first person adds liquidity, it creates a reserve balance and sets the 
 A simple implementation of the `addLiquidity` function in Solidity would look something like this:
 
 ```solidity
-functio addLiquidity(uint256 tokenAmount) public payable {
+function addLiquidity(uint256 tokenAmount) public payable {
     IERC20 token = IERC20(tokenAddress);
     token.transferFrom(msg.sender, address(this), tokenAmount);
 }
