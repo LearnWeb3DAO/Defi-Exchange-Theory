@@ -204,7 +204,7 @@ function addLiquidity(uint tokenAmount) public payable {
         uint ethReserve = address(this).balance - msg.value;
         uint tokenReserve = getReserve();
         uint proportionalTokenAmount = (msg.value * tokenReserve) / ethReserve;
-        require(tokenAmount >= minProportionalTokenAmount, "incorrect ratio of tokens provided");
+        require(tokenAmount >= proportionalTokenAmount, "incorrect ratio of tokens provided");
         
         IERC20 token = IERC20(tokenAddress);
         token.transferFrom(msg.sender, address(this), proportionalTokenAmount);
