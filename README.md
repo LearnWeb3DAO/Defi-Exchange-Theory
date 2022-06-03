@@ -6,12 +6,12 @@ However, centralized exchanges are rife with problems. They can get hacked and l
 
 This may seem extreme, but this is not fiction.
 
-### Mt.Gox
+### Mt.Gox 🏔
 Mt.Gox was the leading Bitcoin exchange from 2010-2014. At it's peak, it was responsible for 70% of all Bitcoin transactions. In early 2014, the company reported they were 'missing' hundreds of thousands of Bitcoin, and declared bankruptcy. Today, those lost Bitcoin are worth billions of dollars.
 
 In the following years, Mt.Gox faced several lawsuits, some of which are still going on 8 years later. [You can read more about what happened with Mt.Gox here](https://www.investopedia.com/terms/m/mt-gox.asp#:~:text=The%20name%20Mt.,the%20largest%20shareholder%20and%20CEO.)
 
-### QuadrigaCX
+### QuadrigaCX 🍁
 QuadrigaCX, a centralized exchange based in Canada, went under in 2018. The founder of Quadriga mysteriously 'died' and all the crypto on the platform disappeared with him. Users reported almost $200 million in lost funds.
 
 The Ontario Securities Commision conducted thorough research into the activities of the company, and declared that the founder of Quadriga was, simply, a fraud. 
@@ -25,7 +25,7 @@ This is not an exhaustive list by any means, but it gives you an idea. Web3 has 
 
 which means that if you don't own your private keys, and instead trust a centralized exchange to manage them for you, you don't really own your cryptocurrency coins. This is true.
 
-### The Birth of Decentralized Exchanges
+### The Birth of Decentralized Exchanges 🐣
 The idea of a decentralized exchange is simple - allow users to trade their crypto directly on-chain through smart contracts without giving up control of their private keys.
 
 While it sounds simple, the reality is much more complicated. In short, decentralized exchanges are a beautiful piece of mathematics and software combined together. We hope by the end of this article you will share the same feeling.
@@ -63,7 +63,7 @@ For the purposes of this tutorial, we will be focusing on the design of Uniswap 
 ### Market Makers
 Uniswap is an **Automated Market Maker**. Let's try to understand what that means.
 
-**Market Makers** are entities that provide liquidity (assets) to trading markets. In non-orderbook systems, liquidity is what allows trading to be possible. That means if you want to sell BTC to buy ETH, the exchange must have an ETH balance you can purchase from in exchange for BTC. Some trading pairs have very high liquidity (eg. BTC <> ETH trading pair), but some have extremely low or no liquidity at all (eg. scam tokens, or newly created tokens).
+**Market Makers** are entities that provide liquidity (assets) to trading markets. In non-orderbook systems, liquidity is what allows trading to be possible. That means if you want to sell BTC to buy ETH, the exchange must have an ETH balance you can purchase from in exchange for BTC. Some trading pairs have very high liquidity (eg. BTC/ETH trading pair), but some have extremely low or no liquidity at all (eg. scam tokens, or newly created tokens).
 
 A DEX must have enough liquidity to function and serve as an alternative to centralized exchanges. 
 
@@ -83,7 +83,7 @@ At the core of Uniswap is one math function:
 
 `x * y = k`
 
-Assume we have a trading pair for `ETH <> LW3 Token`
+Assume we have a trading pair for `ETH / LW3 Token`
 
 **x** = reserve balance of `ETH` in the trading pool
 
