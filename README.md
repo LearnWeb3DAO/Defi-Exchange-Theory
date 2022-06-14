@@ -127,7 +127,9 @@ Assume we have `100 ETH` and `200 LW3 Token` in the contract.
 **What would happen if I want to swap 1 `ETH` for `LW3 Tokens`? Let's do the math.**
 
 `inputAmount` = 1 ETH
+
 `inputReserve` = 100 ETH
+
 `outputReserve` = 200 LW3 Tokens
 
 => `outputAmount` = `1.98019802` `LW3 Tokens`
@@ -135,7 +137,9 @@ Assume we have `100 ETH` and `200 LW3 Token` in the contract.
 **What would happen if instead I wanted to swap 2 `LW3 Tokens` for ETH?**
 
 `inputAmount` = 2 LW3 Tokens
+
 `inputReserve` = 200 LW3 Tokens
+
 `outputReserve` = 100 ETH
 
 => `outputAmount` = `0.999` `ETH`
@@ -156,7 +160,9 @@ The bigger the amount of tokens being traded relative to their reserve values, t
 Let's say I wanted to try to drain out the entire pool, and sell `200 ETH`.
 
 `inputAmount` = 200 ETH
+
 `inputReserve` = 100 ETH
+
 `outputReserve` = 200 LW3 Tokens
 
 => `outputAmount` = `133.333` LW3 Tokens
