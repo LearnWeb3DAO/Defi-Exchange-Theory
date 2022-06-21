@@ -25,6 +25,8 @@ This is not an exhaustive list by any means, but it gives you an idea. Web3 has 
 
 which means that if you don't own your private keys, and instead trust a centralized exchange to manage them for you, you don't really own your cryptocurrency coins. This is true.
 
+<Quiz questionId="33edec62-5683-42d6-9d60-b84217eb6d17" />
+
 ### The Birth of Decentralized Exchanges 🐣
 The idea of a decentralized exchange is simple - allow users to trade their crypto directly on-chain through smart contracts without giving up control of their private keys.
 
@@ -49,6 +51,8 @@ Order-book based exchanges were attempted on Ethereum, with the most significant
 
 There was need for a new approach, a way to allow users to swap between any two tokens arbitrarily without needing an orderbook. Additionally, cookie points if users could actually earn money by using Uniswap.
 
+<Quiz questionId="2a97df55-c6da-4308-b738-a7fe64183bc8" />
+
 ### Uniswap V1, V2, V3
 As of January 2022, three versions of Uniswap have been launched.
 
@@ -60,6 +64,10 @@ V3 was launched in May 2021 and it significantly improved capital efficiency, wh
 
 For the purposes of this tutorial, we will be focusing on the design of Uniswap V1, and in the following level we will actually implement a slightly simplified version of it that allows swapping between ether and a token.
 
+<Quiz questionId="f8957397-cb9e-4309-93a2-9f5973a1a322" />
+
+<Quiz questionId="debff206-5e79-4f3c-8035-52353f0f15fe" />
+
 ### Market Makers
 Uniswap is an **Automated Market Maker**. Let's try to understand what that means.
 
@@ -70,6 +78,8 @@ A DEX must have enough liquidity to function and serve as an alternative to cent
 One way to get that liquidity is that the developers (or investors) put in their own money and become market makers. However, this is not realistic as they would need a huge amount of money to provide enough liquidity for all possible trading pairs. Moreover, this hurts decentralization, as the developers/investors would hold all the power in the market.
 
 Another way, which Uniswap implemented, was to **let anyone be a market maker** - and this is what makes Uniswap an **automated market maker**. Any user can deposit funds to a specific trading pair and add liquidity, and in exchange earn money for doing so through trading fees taken from the users.
+
+<Quiz questionId="54d20f2e-1452-49fd-a660-93a1795f579c" />
 
 ### Functional Requirements
 Considering what we have learnt, we need to allow for the following functionality **at least** to build an automated market maker:
@@ -148,6 +158,9 @@ The product formula we use for price calculations is actually a hyperbola.
 
 The hyperbola never intersects at `x=0` or `y=0` - this means that neither of the reserves will ever be 0 just as a product of trading! **Reserves are infinite**
 
+<Quiz questionId="7f0f3816-d7ca-42f6-ba07-03ac8cd750b4" />
+<Quiz questionId="5775c92d-83bf-4d9a-a63d-131cd1ca9879" />
+
 ### Slippage
 Since we don't get tokens in the exact ratio of reserves, this leads to an interesting implication of the math. The price function causes **slippage** in the price.
 
@@ -165,6 +178,7 @@ As you can see, when we're trying to drain out the pool, we're only getting clos
 
 Some may see this as a flaw of automated market makers that follow `x*y = k`, but it's actually not. It is the same mechanism that protects pools from being completely drained. **This also aligns with the law of supply and demand: the higher the demand relative to the supply, the more costly it is to buy that supply.**
 
+<Quiz questionId="a6b32530-5d5f-43b2-b3d9-f9213dedb77a" />
 
 ### Who sets the initial price?
 When a new cryptocurrency is created, there is no liquidity for trading pairs involving that token. As such, there is no way to calculate the price for it.
@@ -211,6 +225,8 @@ function addLiquidity(uint tokenAmount) public payable {
     }
 }
 ```
+
+<Quiz questionId="c0b735e1-f1aa-4595-962e-626c223957ad" />
 
 ### LP Tokens
 So far we have discussed how to add liquidity, and how to do price calculations for swaps. But what if a liquidity provider wants to withdraw their liquidity from the pool?
@@ -270,6 +286,9 @@ Now we have LP-tokens, we can also use them to calculate how much underlying tok
 
 We don't need to remember how much they originally deposited. Since LP-tokens are proportional to amount of ETH deposited, we can rearrange the above formula to calculate the amount of ETH to return, and proportionately calculate the amount of tokens to return.
 
+<Quiz questionId="0bee63fe-03ab-4319-9033-c7e97201c9cd" />
+<Quiz questionId="6de13216-cf92-411a-8e73-2ccfcb5a7ca9" />
+
 ### Fees
 Now to collect fees on swaps and distribute them amongst liquidity providers, we need to think about a couple of things:
 
@@ -287,6 +306,8 @@ These may seem difficult questions to answer, but we actually have everything we
 
 Uniswap takes a 0.03% fees from each swap. Let's say we take 1% to keep things simple. Adding fees to the contract is as simple as making a few edits to our price calculation formula:
 
+<Quiz questionId="516bc6b9-4c71-421a-896c-464980a0e388" />
+
 We had `outputAmount = (outputReserve * inputAmount) / (inputReserve + inputAmount)`
 
 Now,
@@ -297,9 +318,13 @@ But, Solidity does not support floating point operations. So for Solidity we rew
 
 `outputAmountWithFees = (outputAmount * 99) / 100`
 
+<Quiz questionId="f37ec27c-2ff0-4fbf-9563-b9de9a384ec3" />
+
 ### Congratulations!
 This was a big tutorial with a lot of condensed information. Congratulations on making it this far!
 
 While the math and the ideas can be a little tricky to initially understand, we hope that going by going through the material and asking questions on Discord you can develop an appreciation for how beautifully architected all of this is. 
 
 See you in the next level where we will actually implement the full contract, along with a website, for the DEX.
+
+<SubmitQuiz />
